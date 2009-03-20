@@ -1,0 +1,33 @@
+<%# expects an object with a state_machine for status passed as 'object'%>
+
+<% 
+  status_option_tags = ''
+  object.available_status_events.each do |e|
+    status_option_tags << "<option value='#{e.name}'>#{e.name}</option>"
+  end
+%>
+
+<% if status_option_tags %>
+  <% form_tag status_path(object), :method => :put do %>
+  
+    <% content_tag :p do %>
+      <%= label_tag "Status:" %> <%= object.status %> (<%= link_to_function "History", "$('#status_transitions').toggle();" %>)<br/>
+      <%= hidden_field_tag 'klass', object.class.to_s %>
+      <%= select_tag(:status, status_option_tags) %>
+      <%= submit_tag 'submit' %>
+    <% end %>
+    
+    <% content_tag :ul, :id => "status_transitions", :style => "display:none;" do %>
+      <% if object.status_transitions.blank? %>
+        <li>No status changes have been recorded.</li>
+      <% else %>
+        <% object.status_transitions.each do |t| %>
+          <% content_tag :li do %>
+            <%= t.subject.class.to_s %> was <strong><%= t.event %></strong> on <%= t.created_at.to_s(:human) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    
+  <% end %>  
+<% end %>

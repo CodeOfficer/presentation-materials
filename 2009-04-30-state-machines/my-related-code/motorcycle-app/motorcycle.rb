@@ -67,6 +67,7 @@ end
 program :name, 'Vehicle State Machine Demo'
 program :version, '1.0.0'
 program :description, 'Stupid stuff =)'
+
 default_command :game_on
 
 command :game_on do |c|

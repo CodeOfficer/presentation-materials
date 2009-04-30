@@ -8,7 +8,7 @@ require 'state_machine'
 
 #  -----------------------------------------------------------------------------
 
-class Vehicle
+class HondaCBR600F4i
   
   def initialize
     @speed = 0
@@ -44,22 +44,20 @@ class Vehicle
       transition :stalled => :parked
     end
 
-    state :parked do
-      def speed
-        0
-      end
+    state :parked, :idling, :stalled do
+      def speed; 0; end
     end
 
-    state :idling, :first_gear do
-      def speed
-        10
-      end
+    state :first_gear do
+      def speed; 30; end
     end
 
     state :second_gear do
-      def speed
-        20
-      end
+      def speed; 60; end
+    end
+
+    state :third_gear do
+      def speed; 90; end
     end
   end
 end
@@ -73,19 +71,14 @@ default_command :game_on
 
 command :game_on do |c|
   c.when_called do |args, options|
+    bike = HondaCBR600F4i.new
     
-    v = Vehicle.new
-    asking = true
-    
-    while(asking) do
-      choice = choose *(v.state_events << "-quit!")
-      if choice == "-quit!"
-        asking = false
-      else
-        eval "v.#{choice}!"
-        say "\n"
-        say "Your vehicle state is now #{v.state} traveling #{v.speed}"
-      end
+    while(true) do
+      choice = choose *(bike.state_events << "-quit!")
+      break if choice == "-quit!"
+      eval "bike.#{choice}!"
+      say "\n"
+      say "Your vehicle state is now #{bike.state} traveling #{bike.speed}"
     end
     
   end

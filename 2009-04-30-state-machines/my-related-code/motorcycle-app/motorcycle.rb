@@ -76,9 +76,9 @@ command :game_on do |c|
     
     while(true) do
       choice = choose *(bike.state_events << "-quit!")
-      break if choice == "-quit!"
+      break if choice.eql? "-quit!"
       eval "bike.#{choice}!"
-      say "\n"
+      say "\n" * 2
       say "Your vehicle state is now #{bike.state} traveling #{bike.speed}"
     end
     

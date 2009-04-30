@@ -64,7 +64,7 @@ end
 
 #  -----------------------------------------------------------------------------
 
-program :name, 'Vehicle State Machine Demo'
+program :name, 'HondaCBR600F4i State Machine Demo'
 program :version, '1.0.0'
 program :description, 'Stupid stuff =)'
 
@@ -79,7 +79,7 @@ command :game_on do |c|
       break if choice.eql? "-quit!"
       eval "bike.#{choice}!"
       say "\n" * 2
-      say "Your vehicle state is now #{bike.state} traveling #{bike.speed}"
+      say "Your HondaCBR600F4i's state is now #{bike.state} and traveling #{bike.speed} mph"
     end
     
   end

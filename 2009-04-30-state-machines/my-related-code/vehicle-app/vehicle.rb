@@ -42,9 +42,9 @@ end
 
 #  -----------------------------------------------------------------------------
 
-program :name, 'Choose Your Own Adventure'
+program :name, 'Vehicle State Machine Demo'
 program :version, '1.0.0'
-program :description, 'Stupid stateful conversations.'
+program :description, 'Stupid stuff =)'
 default_command :foo
 
 command :foo do |c|

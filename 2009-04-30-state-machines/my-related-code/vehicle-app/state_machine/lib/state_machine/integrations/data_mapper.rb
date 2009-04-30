@@ -255,7 +255,7 @@ module StateMachine
       
       # Adds a validation error to the given object
       def invalidate(object, attribute, message, values = [])
-        object.errors.add(attribute, generate_message(message, values)) if object.respond_to?(:errors)
+        object.errors.add(attribute, generate_message(message, values)) if supports_validations?
       end
       
       # Resets any errors previously added when invalidating the given object
@@ -264,14 +264,27 @@ module StateMachine
       end
       
       protected
+        # Is validation support currently loaded?
+        def supports_validations?
+          @supports_validations ||= ::DataMapper.const_defined?('Validate')
+        end
+        
         # Skips defining reader/writer methods since this is done automatically
         def define_state_accessor
           owner_class.property(attribute, String) unless owner_class.properties.has_property?(attribute)
+          
+          if supports_validations?
+            attribute = self.attribute
+            owner_class.validates_with_block(attribute) do
+              machine = self.class.state_machine(attribute)
+              machine.states.match(self) ? true : [false, machine.generate_message(:invalid)]
+            end
+          end
         end
         
         # Adds hooks into validation for automatically firing events
         def define_action_helpers
-          if super && action == :save
+          if super && action == :save && supports_validations?
             @instance_helper_module.class_eval do
               define_method(:valid?) do |*args|
                 self.class.state_machines.fire_attribute_events(self, :save, false) { super(*args) }

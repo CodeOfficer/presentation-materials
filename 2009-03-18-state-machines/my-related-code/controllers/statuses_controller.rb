@@ -4,7 +4,7 @@ class StatusesController < ApplicationController
   before_filter :current_user_must_be_admin!
     
   def update
-    raise('STATUS: requires a thing to stat!') unless (params[:klass] && params[:status])
+    raise('STATUS: requires a thing to stat!') unless (params[:klass] && params[:status] && params[:id])
     
     @thing = params[:klass].classify.constantize.find(params[:id])
     

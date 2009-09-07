@@ -1,0 +1,45 @@
+patterns help us define a vocabulary for communicating design decisions
+good languages make them easy to implement
+ideal languages integrate them so well they disappear from sight
+but they are not to be overused. 
+they should be used to solve the problems they were designed for
+
+a specific patten may have a number of implementations
+also a pattern in one language might change, or become unnecessary in another
+some patterns are so well known we don't pay attention to them anymore
+	object oriented design ... inheritance, abstraction, etc
+
+GoF named 23 patterns 
+bigger than a hash table, smaller than a database
+
+"program to an interface, not to an implementation"
+"prefer composition over inheritance"
+
+Patterns gone over in the book:
+
+	template:
+	strategy:
+	factory:
+	abstract factory:
+	observer:
+	proxy:
+	singleton:
+	composite:
+	builder:
+	interpreter:
+	delegate:
+	command:
+	iterator:
+	adapter:
+	decorator:
+	internal domain specific language:
+	meta-programming:
+	convention over configuration:
+	
+Patterns I'll go over:
+
+ 	inheritance, 
+	composition, 
+	template pattern, 
+	strategy pattern, 
+	factory pattern

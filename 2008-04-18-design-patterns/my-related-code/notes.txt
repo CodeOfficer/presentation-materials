@@ -1,0 +1,106 @@
+	creational pattern:
+		factory - a pattern to simplify the creation of objects
+		singleton - a pattern to assure there is only ever one instance of a class
+	structural pattern:
+		proxy	- a middle man pattern to:
+							control access,
+							reduce cost,
+							reduce complexity
+	behavioral patterns:
+		template - a pattern to define abstract behavior for subclasses that define concrete behavior
+		strategy - a pattern to switch an algorithm at runtime
+		observer - allows a number of observer objects to see an event
+
+	CREATIONAL PATTERNS:
+		• can be further divided into class and object creational patterns
+		• While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation to get the job done.
+		factory - creates objects without specifying the exact class to create
+		abstract factory - groups object factories that have a common theme
+		builder - constructs complex objects by separating construction and representation
+		prototype - creates objects by cloning an existing object
+		singleton - restricts object creation for a class to only one instance
+	
+	STRUCTURAL PATTERNS:
+		• concern class and object composition
+		• use inheritance to compose interfaces and define ways to compose objects to obtain new functionality
+		adapter - allows classes with incompatible interfaces to work together by wrapping its own interface around that of an already existing class
+		bridge - decouples an abstraction from its implementation so that the two can vary independently
+		composite - composes one-or-more similar objects so that they can be manipulated as one object
+		decorator - dynamically adds/overrides behavior in an existing method of an object
+		facade - provides a simplified interface to a large body of code
+		flyweight - reduces the cost of creating and manipulating a large number of similar objects
+		proxy - provides a placeholder for another object to control access, reduce cost, and reduce complexity
+		
+	BEHAVIORAL PATTERNS:
+		• concern class and object communication, mostly between objects
+		chain of responsibility - delegates commands to a chain of processing objects
+		command - creates objects which encapsulate actions and parameters
+		interpreter - implements a specialized language
+		iterator - accesses the elements of an object sequentially without exposing its underlying representation
+		mediator - allows loose coupling between classes by being the only class that has detailed knowledge of their methods
+		memento - provides the ability to restore an object to its previous state (undo)
+		observer - is a publish/subscribe pattern which allows a number of observer objects to see an event
+		state - allows an object to alter its behavior when its internal state changes
+		strategy - allows one of a family of algorithms to be selected on-the-fly at runtime
+		template - defines the skeleton of an algorithm as an abstract class, allowing its subclasses to provide concrete behavior
+		visitor - separates an algorithm from an object structure by moving the hierarchy of methods into one object
+
+
+
+• the patterns!
+-----------------
+		
+	template:
+		-code always does same thing except at step 44
+		-example: report generation
+		-example: the initialize method on new objects
+		-an inheritance based pattern!
+		-variations are anticipated and built as subclasses
+		-varies a pattern with a set of concrete classes
+		
+	strategy:
+		-not just step 44, but whole algorithm
+		-how do you vary an algorithm?
+	
+	factory:
+	
+	abstract factory:
+		
+	observer:
+	
+	proxy:
+	
+	singleton:
+	
+	composite:
+	
+	builder:
+	
+	interpreter:
+
+	delegate:
+		-pass the buck
+
+	command:
+		proc or block object
+		
+	iterator:
+	
+	adapter:
+	
+	decorator:
+		
+	internal domain specific language:
+		specific to ruby
+
+	meta-programming:
+
+	convention over configuration:
+
+
+
+
+
+
+
+

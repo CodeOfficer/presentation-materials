@@ -1,0 +1,5 @@
+With composition, behaviors are assembled in the child classes in a bottom-up fashion. 
+
+You don't run into a problem where child classes are inheriting behaviors they don't need. 
+
+Ideally you've encapsulated the behavior behind its own well thought out interface.

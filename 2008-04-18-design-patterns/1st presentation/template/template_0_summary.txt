@@ -1,0 +1,19 @@
+the players:
+  an abstract class, inherited from by
+  a number of concrete subclasses
+  
+a parent class defines abstract behavior for its subclasses, which must define the concrete behavior.
+
+usually the parent is an abstract class 
+
+(ruby does not seem to let us define a traditional abstract class)
+
+the magic of the template pattern is really the template method!
+
+non abstract methods can be used as hooks, not required to be overridden
+
+an inheritance based pattern! variations are anticipated and built into subclasses
+
+examples include:
+  report generation
+  the initialize method on new objects

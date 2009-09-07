@@ -1,0 +1,6 @@
+
+  Instance methods:
+-----------------
+     add_observer, changed, changed?, count_observers, delete_observer,
+     delete_observers, notify_observers
+

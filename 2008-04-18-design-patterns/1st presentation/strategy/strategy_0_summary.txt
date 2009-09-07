@@ -1,0 +1,11 @@
+the players:
+  a context
+  a base strategy class (optional, usually defines/enforces an interface)
+  a number of strategy subclasses
+
+a composition based pattern that uses delegation!
+pattern varies at runtime, thus doesn't have to be a pre-defined variation
+
+examples:
+	RDoc 
+		uses to decide which parser to use to read ruby, fortran or C

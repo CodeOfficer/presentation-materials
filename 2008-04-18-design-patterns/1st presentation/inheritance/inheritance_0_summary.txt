@@ -1,0 +1,5 @@
+Behaviors are embedded in the parent class and are inherited top-down to child classes. 
+
+Every child class must inherit or override those behaviors. 
+
+Sometimes, it is better to use composition over inheritance. 

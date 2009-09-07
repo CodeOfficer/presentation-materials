@@ -1,0 +1,7 @@
+picking the right class for a situation
+
+examples:
+	ActiveRecord 
+		has adapters for each supported db type 
+		you specify the desired adapter during initialization
+		

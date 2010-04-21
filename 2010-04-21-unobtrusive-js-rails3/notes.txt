@@ -1,14 +1,65 @@
 http://robertnyman.com/2008/11/02/obtrusive-javascript-checker-07-support-for-javascript-links-inline-event-information-and-summary-report/
-
 http://en.wikipedia.org/wiki/Unobtrusive_JavaScript
-
 http://icant.co.uk/articles/seven-rules-of-unobtrusive-javascript/
-
 http://ejohn.org/blog/html-5-data-attributes/
-
 http://www.smashingmagazine.com/2008/09/16/jquery-examples-and-best-practices/
-
 http://railscasts.com/episodes/205-unobtrusive-javascript
 http://asciicasts.com/episodes/205-unobtrusive-javascript
-
 http://github.com/rails/jquery-ujs/blob/master/src/rails.js
+http://www.slideshare.net/GreggPollack/rails-3-beautiful-code-3219240
+
+what is ujs?
+	a movement
+	js is maturing
+	it used to be browser compatability, now its feature compatability
+	libraries are advanced enough to handle bowser compatability for us
+
+re: js specifically ...
+	no inline event handlers
+	all code is in external files
+	site is useable without js
+	existing links and forms are repurposed
+	js dependant elements are dynamically added to the page
+
+how do you use ujs?
+	dont make assumptions, degrade nicely, progressive enhancement
+		build a site that works without js
+	use hooks and dom relationships
+	use css instead of dom traversal
+	blah blah
+
+- show bad inline js : why is this bad?
+		we'd like to seperate concerns
+		dom = structure
+		js  = behavior
+		css = presentation
+
+		Begin with your content,
+		give it structure with semantically descriptive markup,
+		apply a presentation layer using CSS, and finally,
+		add a behavior layer with DOM Scripting.
+
+- show good ujs
+		*come up with an example showing why unobtrusive js is better?*
+
+how do you create dynamic behaviors when all your js is in a static file? (data-attributes)
+
+
+html5 custom data attributes
+	data-remote
+	data-method
+	data-confirm
+	data-disable-with
+
+rails 3 depreciated methods
+	link_to_remote
+	remote_form_for
+	observe_field
+	observe_form
+	form_remote_tag
+	button_to_remote
+	submit_to_remote
+	periodically_call_remote
+
+
+

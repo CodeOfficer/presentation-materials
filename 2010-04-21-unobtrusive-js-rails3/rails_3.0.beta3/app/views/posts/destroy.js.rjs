@@ -1,0 +1,4 @@
+page["#post_#{@post.id}"].slideUp('slow')
+page.delay(5) do
+  page["#post_#{@post.id}"].remove()
+end

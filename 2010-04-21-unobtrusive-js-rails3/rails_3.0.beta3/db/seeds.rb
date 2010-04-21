@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+
+
+10.times do |n|
+  Post.create({
+    :title => "This is post ##{n+1}"
+  })
+end

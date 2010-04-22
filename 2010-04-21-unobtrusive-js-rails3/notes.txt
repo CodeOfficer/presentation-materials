@@ -14,10 +14,10 @@ what is ujs?
 	it used to be browser compatability, now its feature compatability
 	libraries are advanced enough to handle bowser compatability for us
 
-re: js specifically ...
+what are the rules?
 	no inline event handlers
 	all code is in external files
-	site is useable without js
+	site should usable without js
 	existing links and forms are repurposed
 	js dependant elements are dynamically added to the page
 

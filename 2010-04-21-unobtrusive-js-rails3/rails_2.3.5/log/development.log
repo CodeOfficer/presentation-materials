@@ -906,3 +906,53 @@ Processing PostsController#index (for 127.0.0.1 at 2010-04-21 18:15:13) [GET]
 Rendering template within layouts/application
 Rendering posts/index
 Completed in 21ms (View: 17, DB: 0) | 200 OK [http://localhost/posts]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20100421044350)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100421044350')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posts")[0m
+  [4;36;1mPost Create (0.3ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #1', NULL, '2010-04-21 23:21:39')[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #2', NULL, '2010-04-21 23:21:39')[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #3', NULL, '2010-04-21 23:21:39')[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #4', NULL, '2010-04-21 23:21:39')[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #5', NULL, '2010-04-21 23:21:39')[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #6', NULL, '2010-04-21 23:21:39')[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #7', NULL, '2010-04-21 23:21:39')[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #8', NULL, '2010-04-21 23:21:39')[0m
+  [4;36;1mPost Create (0.2ms)[0m   [0;1mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #9', NULL, '2010-04-21 23:21:39')[0m
+  [4;35;1mPost Create (0.2ms)[0m   [0mINSERT INTO "posts" ("created_at", "title", "body", "updated_at") VALUES('2010-04-21 23:21:39', 'This is post #10', NULL, '2010-04-21 23:21:39')[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-04-21 19:21:51) [GET]
+  [4;36;1mPost Load (0.9ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 114ms (View: 54, DB: 1) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#destroy (for 127.0.0.1 at 2010-04-21 19:24:32) [DELETE]
+  Parameters: {"authenticity_token"=>"lw68wr3AUGYIpRaQM2ZR0TG9m6xT30EXRtGwibSAHhQ=", "id"=>"1", "_"=>""}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mPost Destroy (0.3ms)[0m   [0;1mDELETE FROM "posts" WHERE "id" = 1[0m
+Rendering posts/destroy
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/posts/1]
